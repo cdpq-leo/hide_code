@@ -65,9 +65,9 @@ function ($, celltoolbar, Jupyter){
 	function toggleHideCode(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hideCode && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.input_area').hide();
+			c.find('.input').hide();
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.input_area').show();
+			c.find('.input').show();
 		}
 	}
 
