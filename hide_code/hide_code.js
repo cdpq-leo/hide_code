@@ -12,7 +12,7 @@ define([
 'jquery',
 'notebook/js/celltoolbar',
 'base/js/namespace'
-], 
+],
 function ($, celltoolbar, Jupyter){
 	"use strict";
 	const CODE = 1;
@@ -65,18 +65,18 @@ function ($, celltoolbar, Jupyter){
 	function toggleHideCode(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hideCode && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.input_area').hide(); 
+			c.find('.input_area').hide();
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.input_area').show(); 
+			c.find('.input_area').show();
 		}
 	}
 
 	function toggleHidePrompt(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hidePrompt && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.prompt').css('visibility','hidden');
+			c.find('.prompt').hide();
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.prompt').css('visibility','visible'); 
+			c.find('.prompt').show();
 		}
 	}
 
@@ -85,15 +85,15 @@ function ($, celltoolbar, Jupyter){
 		if (cell.metadata.hideOutput && cell.class_config.classname != 'MarkdownCell'){
 			c.find('.output_wrapper .output_subarea').css('display','none');
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.output_wrapper .output_subarea').css('display','block'); 
+			c.find('.output_wrapper .output_subarea').css('display','block');
 		}
 	}
 
 	function toggleAllPromptsAndCode(){
 		var all_hidden = Jupyter.notebook.metadata.hide_code_all_hidden;
 
-        if ( all_hidden == undefined ) { 
-        	all_hidden = false; 
+        if ( all_hidden == undefined ) {
+        	all_hidden = false;
         };
     	if ( all_hidden == false ) {
         	Jupyter.notebook.metadata.hide_code_all_hidden = true;
@@ -326,9 +326,9 @@ function ($, celltoolbar, Jupyter){
         });
         console.log('hide_code setup complete');
 	}
-	
+
 	// setup();
-	
+
 
 	return {
         load_ipython_extension: load_ipython_extension
