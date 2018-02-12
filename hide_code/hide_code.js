@@ -65,18 +65,18 @@ function ($, celltoolbar, Jupyter){
 	function toggleHideCode(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hideCode && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.inner_cell').hide();
+			c.find('.input_area').hide();
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.inner_cell').show();
+			c.find('.input_area').show();
 		}
 	}
 
 	function toggleHidePrompt(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hidePrompt && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.prompt').css('visibility','hidden');
+			c.find('.prompt').hide();
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.prompt').css('visibility','visible');
+			c.find('.prompt').show();
 		}
 	}
 
