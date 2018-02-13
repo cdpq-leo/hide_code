@@ -74,9 +74,9 @@ function ($, celltoolbar, Jupyter){
 	function toggleHidePrompt(cell){
 		var c = $(cell.element);
 		if (cell.metadata.hidePrompt && cell.class_config.classname != 'MarkdownCell'){
-			c.find('.prompt').css('visibility','hidden');
+			c.find('.input .prompt').css('visibility','hidden');
 		} else if(cell.class_config.classname != 'MarkdownCell') {
-			c.find('.prompt').css('visibility','visible');
+			c.find('.input .prompt').css('visibility','visible');
 		}
 	}
 
